@@ -1,0 +1,24 @@
+getsecret
+---------
+
+Retrieve secrets from GPG encrypted YAML files.
+
+usage
+=====
+
+Put secrets in a YAML file:
+
+    # ~/.secrets.gpg
+    useful_website:
+        secret: mysecret
+
+Get a secret from the command line:
+
+    $ getsecret useful_website
+    mysecret
+
+Get a secret from a script:
+
+   # /tmp/getsecret_example.sh
+   SECRET=$(getsecret useful_website)
+   echo "Whisper $SECRET"
